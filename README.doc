@@ -1,0 +1,25 @@
+/*Nettoyer l'explorateur de fichier*/
+mvn clean
+
+/*Compiler les fichiers du src*/
+mvn compile
+
+/*Créer les paquets 'targets' et transforme les fichiers java en fichiers exécutables jar*/
+mvn package
+
+/*Lancer le programme jar du src*/
+java -jar target/tp_qualite-1.0.jar
+
+/*Plugin pour générer automatiquement la javadoc*/
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-javadoc-plugin</artifactId>
+    <executions>
+        <execution>
+            <id>attach-javadocs</id>
+            <goals>
+                <goal>jar</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
